@@ -20,17 +20,13 @@ Even if you are an advanced Java programmer, it is helpful to start with the [FT
 ## Downloading the Project
 If you are an Android Studio programmer, there are several ways to download this repo.  Note that if you use the Blocks or OnBot Java Tool to program your robot, then you do not need to download this repository.
 
-* If you are a git user, you can clone the most current version of the repository:
+This specific branch of this forked repository, FtcRobotController_CenterStage2023, is version of FtcRobotController used for CENTERSTAGE (2023-2024) for the Maywood Middle School FTC team. Note that it also includes a git submodule for the TeamCode_CenterStage2023 repository (which is also owned by this team's github). To clone these repositories simultaneously, use the following git command:
 
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;git clone https://github.com/FIRST-Tech-Challenge/FtcRobotController.git</p>
+git clone -b FtcRobotController_CenterStage2023 --recursive https://github.com/Maywood-FTC-Robotics/FtcRobotController.git
 
-* Or, if you prefer, you can use the "Download Zip" button available through the main repository page.  Downloading the project as a .ZIP file will keep the size of the download manageable.
+Please be aware that the TeamCode repo (submodule) will have a detached HEAD after being cloned (due to git's default behavior) and won't allow for changes to be tracked.  So to put the repo in a state to track changes, navigate to the TeamCode directory (FtcRobotController\TeamCode) after cloning and run the following git command to checkout the main branch:
 
-* You can also download the project folder (as a .zip or .tar.gz archive file) from the Downloads subsection of the [Releases](https://github.com/FIRST-Tech-Challenge/FtcRobotController/releases) page for this repository.
-
-* The Releases page also contains prebuilt APKs.
-
-Once you have downloaded and uncompressed (if needed) your folder, you can use Android Studio to import the folder  ("Import project (Eclipse ADT, Gradle, etc.)").
+git checkout main
 
 ## Getting Help
 ### User Documentation and Tutorials

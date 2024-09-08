@@ -1,0 +1,14 @@
+{
+    "SequentialCommandGroup": [
+        {
+            "WaitCommand": {
+                "WaitTimeMs": 0.0
+            }
+        },
+        {
+            "TrajectoryFollowCommand": {
+                "TrajectoryName": "trajectory"
+            }
+        }
+    ]
+}

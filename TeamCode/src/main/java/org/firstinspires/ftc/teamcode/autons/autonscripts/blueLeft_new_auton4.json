@@ -1,0 +1,24 @@
+{
+    "SequentialCommandGroup": [
+        {
+            "WaitCommand": {
+                "WaitTimeMs": 0.0
+            }
+        },
+        {
+            "ServoPositionCommand": {
+                "Position": 0.0
+            }
+        },
+        {
+            "TrajectoryFollowCommand": {
+                "TrajectoryName": "trajectory"
+            }
+        },
+        {
+            "ServoPositionCommand": {
+                "Position": 0.0
+            }
+        }
+    ]
+}

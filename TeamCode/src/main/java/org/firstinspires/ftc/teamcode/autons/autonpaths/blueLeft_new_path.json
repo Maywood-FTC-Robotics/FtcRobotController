@@ -1,0 +1,29 @@
+{
+    "StartPoint": {
+        "X": 0.0,
+        "Y": 0.2,
+        "pathHeadingDeg": -0.0
+    },
+    "WayPoints": {
+        "X": [
+            0.5
+        ],
+        "Y": [
+            0.35
+        ]
+    },
+    "EndPoint": {
+        "X": 1.3,
+        "Y": 0.8,
+        "pathHeadingDeg": -0.0
+    },
+    "MaxVelocityMetersPerSec": 0.3,
+    "MaxAccelerationMetersPerSecondSq": 4.0,
+    "IsReversed": "False",
+    "StartVelocity": 0.0,
+    "EndVelocity": 0.0,
+    "MaxAngularVelocityDegPerSec": 30.0,
+    "MaxAngularAccelerationDegPerSecondSq": 30.0,
+    "StartAngleDeg": -90.0,
+    "EndAngleDeg": -0.0
+}

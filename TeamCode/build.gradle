@@ -8,7 +8,6 @@
 // please think carefully as to whether such customizations are really necessary
 // before doing so.
 
-
 // Custom definitions may go here
 
 // Include common definitions from above.
@@ -23,6 +22,51 @@ android {
     }
 }
 
+task copyAutonScriptsToAndroidDevice(type: Exec) {
+    // Define the local directory within your Android Studio project
+    def localAutonScriptsDirectory = "${projectDir}\\src\\main\\java\\org\\firstinspires\\ftc\\teamcode\\autons\\autonscripts"
+    def androidAutonScriptsDirectory = "/sdcard/AutonScripts/" // Replace with your desired directory on the Android device
+
+    // Get the ADB path
+    def adbPath = android.getAdbExecutable().absolutePath
+
+    // Create the target directory on the Android device (if it doesn't exist)
+    commandLine adbPath, "shell", "mkdir", "-p", androidAutonScriptsDirectory
+
+    // Push files from the local directory to the Android device
+    commandLine adbPath, "push", "$localAutonScriptsDirectory\\.", androidAutonScriptsDirectory
+}
+
+task copyAutonPathsToAndroidDevice(type: Exec) {
+    // Define the local directory within your Android Studio project
+    def localAutonPathsDirectory = "${projectDir}\\src\\main\\java\\org\\firstinspires\\ftc\\teamcode\\autons\\autonpaths"
+    def androidAutonPathsDirectory = "/sdcard/AutonPaths/" // Replace with your desired directory on the Android device
+
+    // Get the ADB path
+    def adbPath = android.getAdbExecutable().absolutePath
+
+    // Create the target directory on the Android device (if it doesn't exist)
+    commandLine adbPath, "shell", "mkdir", "-p", androidAutonPathsDirectory
+
+    // Push files from the local directory to the Android device
+    commandLine adbPath, "push", "$localAutonPathsDirectory\\.", androidAutonPathsDirectory
+}
+// Make sure this task runs before the build completes
+preBuild.dependsOn copyAutonPathsToAndroidDevice, copyAutonScriptsToAndroidDevice
+
+repositories {
+    maven {
+        url = 'https://maven.brott.dev/'
+    }
+    maven { url = 'https://jitpack.io' }
+}
+
 dependencies {
     implementation project(':FtcRobotController')
+    annotationProcessor files('lib/OpModeAnnotationProcessor.jar')
+    implementation 'org.ftclib.ftclib:core:2.1.1'
+    implementation "com.googlecode.json-simple:json-simple:1.1.1"
+    implementation "com.acmerobotics.roadrunner:ftc:0.1.13"
+    implementation "com.acmerobotics.dashboard:dashboard:0.4.14"
+    implementation 'com.github.Eeshwar-Krishnan:PhotonFTC:v3.0.1-ALPHA'
 }

@@ -1,3 +1,28 @@
+> [!NOTE]
+> This branch `IntoTheDeep2024_TeamDeepCharge` contains the competition code for the FTC 2024-2025 Into the Deep challenge. The TeamCode folder in this branch is set up as a submodule that points to the [Team24620Code_IntoTheDeep2024](https://github.com/Maywood-FTC-Robotics/Team24620Code_IntoTheDeep2024) repository. Please add all competition code to the TeamCode folder. **Do not** make code changes to the `main` branch or the original files in this branch. This will allow us to easily sync with updates from the [FIRST-Tech-Challenge/FtcRobotController](https://github.com/FIRST-Tech-Challenge/FtcRobotController) repository, from which this repo is forked.
+
+## Instructions to clone and update the repo
+### To Clone
+Run the following commands.
+```
+git clone -b IntoTheDeep2024_TeamDeepCharge --recurse-submodules git@github.com:Maywood-FTC-Robotics/FtcRobotController.git
+cd FtcRobotController
+cd TeamCode
+git checkout main
+```
+> [!NOTE]
+> The TeamCode submodule may have a detached HEAD. Therefore, you need to check out the `main` branch of the submodule's remote repository. This is the purpose of the last three commands after the clone above.
+
+### To update the submodule
+After merging changes to the `main` branch of the submodule's remote repo [Team24620Code_IntoTheDeep2024](https://github.com/Maywood-FTC-Robotics/Team24620Code_IntoTheDeep2024), you need to update the submodule to point to the latest version.  To do so, run the following commands.
+```
+cd TeamCode
+git pull
+cd ..
+git submodule update --remote TeamCode
+```
+Then commit and push up the change.
+
 ## NOTICE
 
 This repository contains the public FTC SDK for the INTO THE DEEP (2024-2025) competition season.
